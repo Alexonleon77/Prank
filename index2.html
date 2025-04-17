@@ -24,6 +24,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       animation: float 2s ease-in-out infinite;
+      cursor: pointer;
     }
     @keyframes float {
       0%, 100% {
@@ -39,10 +40,11 @@
   <h1>Скачать читы на вашу игру</h1>
   <button onclick="playSound()">Скачать</button>
 
-  <!-- Используем рабочую ссылку на звук -->
+  <!-- Рабочая ссылка на звук -->
   <audio id="prankAudio" src="https://www.soundjay.com/button/beep-08b.mp3"></audio>
 
   <script>
+    // Функция воспроизведения звука при клике
     function playSound() {
       const audio = document.getElementById("prankAudio");
       audio.play();
