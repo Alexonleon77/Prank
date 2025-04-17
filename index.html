@@ -26,23 +26,23 @@
 </head>
 <body>
 
-  <button id="prankButton">Скачать</button>
+  <button id="prankButton" onclick="playSound()">Скачать</button>
 
-  <audio id="prankAudio">
-    <source src="https://www.myinstants.com/media/sounds/moan-meme.mp3" type="audio/mpeg">
+  <audio id="prankAudio" preload="auto">
+    <source src="https://www.myinstants.com/media/sounds/stony-akh-akh-akh.mp3" type="audio/mpeg">
   </audio>
 
   <script>
     const button = document.getElementById("prankButton");
     const audio = document.getElementById("prankAudio");
 
-    button.addEventListener("click", () => {
-      audio.currentTime = 0;
+    function playSound() {
       audio.volume = 1;
+      audio.currentTime = 0;
       audio.play().catch(e => {
-        console.log("Ошибка воспроизведения:", e);
+        console.log("Ошибка воспроизведения звука:", e);
       });
-    });
+    }
 
     function moveButton() {
       const maxX = window.innerWidth - button.offsetWidth;
@@ -54,7 +54,9 @@
     }
 
     setInterval(moveButton, 1000);
-    window.onload = moveButton;
+    window.onload = () => {
+      moveButton();
+    };
   </script>
 
 </body>
