@@ -51,12 +51,13 @@
   <h1>Скачать читы на вашу игру</h1>
   <button onclick="playSound()">Скачать</button>
 
-  <audio id="prankAudio" src="https://www.myinstants.com/media/sounds/moan-meme.mp3"></audio>
+  <audio id="prankAudio" src="https://www.myinstants.com/media/sounds/stony-akh-akh-akh.mp3"></audio>
 
   <script>
     function playSound() {
       const audio = document.getElementById("prankAudio");
-      audio.volume = 1;  // Максимальная громкость
+      audio.volume = 1;
+      audio.currentTime = 0;
       audio.play();
     }
   </script>
