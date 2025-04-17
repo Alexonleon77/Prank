@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Скачать читы на вашу игру</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: white;
+      font-family: sans-serif;
+    }
+
+    button {
+      position: absolute;
+      font-size: 24px;
+      padding: 20px 40px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: left 0.5s ease, top 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <button id="prankBtn" onclick="playSound()">Скачать</button>
+
+  <audio id="prankAudio" src="https://www.myinstants.com/media/sounds/moan-meme.mp3"></audio>
+
+  <script>
+    const button = document.getElementById("prankBtn");
+    const audio = document.getElementById("prankAudio");
+
+    // Функция, которая будет запускать звук при нажатии на кнопку
+    function playSound() {
+      audio.volume = 1;  // Устанавливаем максимальную громкость сразу
+      audio.currentTime = 0;  // Ставим на начало
+      audio.play();  // Запускаем звук
+    }
+
+    // Мягкое плавание кнопки по экрану
+    function floatButton() {
+      const x = Math.random() * (window.innerWidth - button.offsetWidth);
+      const y = Math.random() * (window.innerHeight - button.offsetHeight);
+      button.style.left = `${x}px`;
+      button.style.top = `${y}px`;
+    }
+
+    // Запускаем плавание кнопки
+    setInterval(floatButton, 1200); // Каждые 1.2 секунды меняет позицию
+  </script>
+</body>
+</html>
