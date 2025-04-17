@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Скачать читы на вашу игру</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 100px;
+    }
+    button {
+      font-size: 24px;
+      padding: 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Скачать читы на вашу игру</h1>
+  <button onclick="playSound()">Скачать</button>
+
+  <audio id="prankAudio" src="https://www.myinstants.com/media/sounds/moan-meme.mp3"></audio>
+
+  <script>
+    function playSound() {
+      const audio = document.getElementById("prankAudio");
+      audio.volume = 1;
+      audio.play();
+    }
+    window.onload = () => {
+      // Максимальная громкость
+      const audio = document.getElementById("prankAudio");
+      audio.volume = 1;
+    };
+  </script>
+</body>
+</html>
