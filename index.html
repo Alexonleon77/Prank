@@ -5,47 +5,64 @@
   <title>Скачать читы на вашу игру</title>
   <style>
     body {
-      margin: 0;
-      overflow: hidden;
-      background: #fff;
-      font-family: sans-serif;
       text-align: center;
+      font-family: sans-serif;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
     }
-
-    #prankButton {
-      position: absolute;
-      font-size: 24px;
-      padding: 20px;
+    button {
+      font-size: 40px;
+      padding: 40px;
       background-color: red;
       color: white;
       border: none;
       border-radius: 12px;
+      position: absolute;
       cursor: pointer;
+      animation: floatButton 12s ease-in-out infinite;
+    }
+    
+    @keyframes floatButton {
+      0% {
+        top: 5%;
+        left: 5%;
+      }
+      20% {
+        top: 5%;
+        left: 80%;
+      }
+      40% {
+        top: 80%;
+        left: 80%;
+      }
+      60% {
+        top: 80%;
+        left: 5%;
+      }
+      80% {
+        top: 50%;
+        left: 90%;
+      }
+      100% {
+        top: 5%;
+        left: 5%;
+      }
     }
   </style>
 </head>
 <body>
+  <h1>Скачать читы на вашу игру</h1>
+  <button onclick="playSound()">Скачать</button>
 
-  <button id="prankButton" onclick="playSound()">Скачать</button>
-
-  <audio id="prankAudio" preload="auto">
-    <source src="https://www.myinstants.com/media/sounds/stony-akh-akh-akh.mp3" type="audio/mpeg">
-  </audio>
+  <audio id="prankAudio" src="https://www.myinstants.com/media/sounds/moan-meme.mp3"></audio>
 
   <script>
-    const button = document.getElementById("prankButton");
-    const audio = document.getElementById("prankAudio");
-
     function playSound() {
-      audio.volume = 1;
-      audio.play().catch(e => {
-        console.log("Ошибка воспроизведения звука:", e);
-      });
+      const audio = document.getElementById("prankAudio");
+      audio.volume = 1;  // Максимальная громкость
+      audio.play();
     }
-
-    function moveButton() {
-      const maxX = window.innerWidth - button.offsetWidth;
-      const maxY = window.innerHeight - button.offsetHeight;
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
-      button.style
+  </script>
+</body>
+</html>
