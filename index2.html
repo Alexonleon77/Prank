@@ -5,52 +5,48 @@
   <title>Скачать читы на вашу игру</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: white;
+      text-align: center;
       font-family: sans-serif;
+      margin-top: 100px;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
     }
-
     button {
-      position: absolute;
       font-size: 24px;
-      padding: 20px 40px;
-      background-color: #ff4d4d;
+      padding: 20px;
+      background-color: red;
       color: white;
       border: none;
       border-radius: 12px;
-      cursor: pointer;
-      transition: left 0.5s ease, top 0.5s ease;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: float 2s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
+      }
+      50% {
+        transform: translate(-50%, -50%) translateY(-20px);
+      }
     }
   </style>
 </head>
 <body>
-  <button id="prankBtn" onclick="playSound()">Скачать</button>
+  <h1>Скачать читы на вашу игру</h1>
+  <button onclick="playSound()">Скачать</button>
 
-  <audio id="prankAudio" src="https://www.myinstants.com/media/sounds/moan-meme.mp3"></audio>
+  <!-- Используем рабочую ссылку на звук -->
+  <audio id="prankAudio" src="https://www.soundjay.com/button/beep-08b.mp3"></audio>
 
   <script>
-    const button = document.getElementById("prankBtn");
-    const audio = document.getElementById("prankAudio");
-
-    // Функция, которая будет запускать звук при нажатии на кнопку
     function playSound() {
-      audio.volume = 1;  // Устанавливаем максимальную громкость сразу
-      audio.currentTime = 0;  // Ставим на начало
-      audio.play();  // Запускаем звук
+      const audio = document.getElementById("prankAudio");
+      audio.play();
     }
-
-    // Мягкое плавание кнопки по экрану
-    function floatButton() {
-      const x = Math.random() * (window.innerWidth - button.offsetWidth);
-      const y = Math.random() * (window.innerHeight - button.offsetHeight);
-      button.style.left = `${x}px`;
-      button.style.top = `${y}px`;
-    }
-
-    // Запускаем плавание кнопки
-    setInterval(floatButton, 1200); // Каждые 1.2 секунды меняет позицию
   </script>
 </body>
 </html>
