@@ -28,8 +28,8 @@
 <body>
   <button onclick="playSound()">Скачать</button>
 
-  <!-- Заменим ссылку на звук -->
-  <audio id="prankAudio" src="https://www.myinstants.com/media/sounds/stony-akh-akh-akh.mp3"></audio>
+  <!-- Крик из HL2 -->
+  <audio id="prankAudio" src="https://www.myinstants.com/media/sounds/stalker-scream.mp3"></audio>
 
   <script>
     function playSound() {
